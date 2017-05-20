@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedKanclPlaylist", "SharedKanclPlaylist\SharedKanclPlaylist.csproj", "{207C6A2D-D6C1-4FCC-A143-AD26628A78F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeExtractor", "YoutubeExtractor\YoutubeExtractor\YoutubeExtractor.csproj", "{ECDC127F-8DEF-4F99-8300-72C13597339D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaToolkit", "MediaToolkit\MediaToolkit.csproj", "{124AB335-EEAC-416F-B06B-80AD3CF56E38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedKanclPlaylistWCFSvc", "SharedKanclPlaylistWCFSvc\SharedKanclPlaylistWCFSvc.csproj", "{0349CABA-5CA3-44B3-897E-E2E2BFE093D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		DebugToConsole|Any CPU = DebugToConsole|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{207C6A2D-D6C1-4FCC-A143-AD26628A78F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{207C6A2D-D6C1-4FCC-A143-AD26628A78F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{207C6A2D-D6C1-4FCC-A143-AD26628A78F9}.DebugToConsole|Any CPU.ActiveCfg = Debug|Any CPU
+		{207C6A2D-D6C1-4FCC-A143-AD26628A78F9}.DebugToConsole|Any CPU.Build.0 = Debug|Any CPU
+		{207C6A2D-D6C1-4FCC-A143-AD26628A78F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{207C6A2D-D6C1-4FCC-A143-AD26628A78F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECDC127F-8DEF-4F99-8300-72C13597339D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECDC127F-8DEF-4F99-8300-72C13597339D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECDC127F-8DEF-4F99-8300-72C13597339D}.DebugToConsole|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECDC127F-8DEF-4F99-8300-72C13597339D}.DebugToConsole|Any CPU.Build.0 = Debug|Any CPU
+		{ECDC127F-8DEF-4F99-8300-72C13597339D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECDC127F-8DEF-4F99-8300-72C13597339D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{124AB335-EEAC-416F-B06B-80AD3CF56E38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{124AB335-EEAC-416F-B06B-80AD3CF56E38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{124AB335-EEAC-416F-B06B-80AD3CF56E38}.DebugToConsole|Any CPU.ActiveCfg = DebugToConsole|Any CPU
+		{124AB335-EEAC-416F-B06B-80AD3CF56E38}.DebugToConsole|Any CPU.Build.0 = DebugToConsole|Any CPU
+		{124AB335-EEAC-416F-B06B-80AD3CF56E38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{124AB335-EEAC-416F-B06B-80AD3CF56E38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0349CABA-5CA3-44B3-897E-E2E2BFE093D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0349CABA-5CA3-44B3-897E-E2E2BFE093D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0349CABA-5CA3-44B3-897E-E2E2BFE093D6}.DebugToConsole|Any CPU.ActiveCfg = Debug|Any CPU
+		{0349CABA-5CA3-44B3-897E-E2E2BFE093D6}.DebugToConsole|Any CPU.Build.0 = Debug|Any CPU
+		{0349CABA-5CA3-44B3-897E-E2E2BFE093D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0349CABA-5CA3-44B3-897E-E2E2BFE093D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
