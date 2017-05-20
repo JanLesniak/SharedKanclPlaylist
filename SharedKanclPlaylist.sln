@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedKanclPlaylist", "SharedKanclPlaylist\SharedKanclPlaylist.csproj", "{207C6A2D-D6C1-4FCC-A143-AD26628A78F9}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaToolkit", "MediaToolkit\MediaToolkit.csproj", "{124AB335-EEAC-416F-B06B-80AD3CF56E38}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedKanclPlaylistWCFSvc", "SharedKanclPlaylistWCFSvc\SharedKanclPlaylistWCFSvc.csproj", "{0349CABA-5CA3-44B3-897E-E2E2BFE093D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedPlaylistClient", "SharedPlaylistClient\SharedPlaylistClient.csproj", "{0F332A82-654E-46C5-8BD2-6F03A52FEA38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +44,12 @@ Global
 		{0349CABA-5CA3-44B3-897E-E2E2BFE093D6}.DebugToConsole|Any CPU.Build.0 = Debug|Any CPU
 		{0349CABA-5CA3-44B3-897E-E2E2BFE093D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0349CABA-5CA3-44B3-897E-E2E2BFE093D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F332A82-654E-46C5-8BD2-6F03A52FEA38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F332A82-654E-46C5-8BD2-6F03A52FEA38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F332A82-654E-46C5-8BD2-6F03A52FEA38}.DebugToConsole|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F332A82-654E-46C5-8BD2-6F03A52FEA38}.DebugToConsole|Any CPU.Build.0 = Debug|Any CPU
+		{0F332A82-654E-46C5-8BD2-6F03A52FEA38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F332A82-654E-46C5-8BD2-6F03A52FEA38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

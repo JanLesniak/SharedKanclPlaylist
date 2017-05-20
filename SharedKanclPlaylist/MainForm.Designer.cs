@@ -191,7 +191,7 @@ namespace SharedKanclPlaylist
             this.Controls.Add(this.txtBoxLink);
             this.Controls.Add(this.btnProcessVideo);
             this.Name = "MainForm";
-            this.Text = "Shared Kancl Playlist";
+            this.Text = "Shared Kancl Playlist PLAYER";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_OnClose);
             ((System.ComponentModel.ISupportInitialize)(this.WindowsMediaPlayer)).EndInit();
             this.ResumeLayout(false);
