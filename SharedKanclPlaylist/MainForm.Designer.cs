@@ -56,7 +56,7 @@ namespace SharedKanclPlaylist
             this.btnProcessVideo.TabIndex = 0;
             this.btnProcessVideo.Text = "&Zpracuj";
             this.btnProcessVideo.UseVisualStyleBackColor = true;
-            this.btnProcessVideo.Click += new System.EventHandler(this.btnProcessVideo_Click);
+            this.btnProcessVideo.Click += new System.EventHandler(this.BtnProcessVideo_Click);
             // 
             // txtBoxLink
             // 
@@ -150,8 +150,8 @@ namespace SharedKanclPlaylist
             this.lstBoxPlaylist.Name = "lstBoxPlaylist";
             this.lstBoxPlaylist.Size = new System.Drawing.Size(308, 446);
             this.lstBoxPlaylist.TabIndex = 12;
-            this.lstBoxPlaylist.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lstBoxPlaylist_KeyDown);
-            this.lstBoxPlaylist.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstBoxPlaylist_DoubleClick);
+            this.lstBoxPlaylist.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LstBoxPlaylist_KeyDown);
+            this.lstBoxPlaylist.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.LstBoxPlaylist_DoubleClick);
             // 
             // lblSateLine
             // 
@@ -169,7 +169,7 @@ namespace SharedKanclPlaylist
             this.btnLoadDefaultPlaylist.TabIndex = 14;
             this.btnLoadDefaultPlaylist.Text = "Načti playlist";
             this.btnLoadDefaultPlaylist.UseVisualStyleBackColor = true;
-            this.btnLoadDefaultPlaylist.Click += new System.EventHandler(this.btnLoadDefaultPlaylist_Click);
+            this.btnLoadDefaultPlaylist.Click += new System.EventHandler(this.BtnLoadDefaultPlaylist_Click);
             // 
             // MainForm
             // 

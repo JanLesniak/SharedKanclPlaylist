@@ -39,11 +39,11 @@ namespace SharedKanclPlaylist
             pauseBetweenSongs = new System.Windows.Forms.Timer();
             pauseBetweenSongs.Interval = 2000;
             pauseBetweenSongs.Stop();
-            pauseBetweenSongs.Tick += new EventHandler(pauseBetweenSongs_Tick);
+            pauseBetweenSongs.Tick += new EventHandler(PauseBetweenSongs_Tick);
 
             checkNewUrlTimer = new System.Windows.Forms.Timer();
             checkNewUrlTimer.Interval = 10000;
-            checkNewUrlTimer.Tick += new EventHandler(checkNewUrlTimer_Tick);
+            checkNewUrlTimer.Tick += new EventHandler(CheckNewUrlTimer_Tick);
             checkNewUrlTimer.Start();
 
 
@@ -61,12 +61,12 @@ namespace SharedKanclPlaylist
 
         }
 
-        private void checkNewUrlTimer_Tick(object sender, EventArgs e)
+        private void CheckNewUrlTimer_Tick(object sender, EventArgs e)
         {
-            tryGetNewUrl();
+            TryGetNewUrl();
         }
 
-        private void btnProcessVideo_Click(object sender, EventArgs e)
+        private void BtnProcessVideo_Click(object sender, EventArgs e)
         {
             lblSateLine.Text = "";
             progressBarConvert.Value = 0;
@@ -90,21 +90,21 @@ namespace SharedKanclPlaylist
         {
             var path = Environment.CurrentDirectory + @"\songs\";
 
-            var video = getVideo(link);
+            var video = GetVideo(link);
             string videoName, videoFullPath;
-            fetchPaths(path, video, out videoName, out videoFullPath);
+            FetchPaths(path, video, out videoName, out videoFullPath);
 
             var videoDownloader = new VideoDownloader(video, videoFullPath);
 
-            videoDownloader.DownloadProgressChanged += videoDownloader_DownloadProgressChanged;
-            videoDownloader.DownloadFinished += (sender, e) => videoDownloader_DownloadFinished(sender, e, videoFullPath, path, videoName);
+            videoDownloader.DownloadProgressChanged += VideoDownloader_DownloadProgressChanged;
+            videoDownloader.DownloadFinished += (sender, e) => VideoDownloader_DownloadFinished(sender, e, videoFullPath, path, videoName);
 
             Thread thread = new Thread(() => { videoDownloader.Execute(); }) { IsBackground = true };
             thread.Start();
 
         }
 
-        private void fetchPaths(string path, VideoInfo video, out string videoName, out string videoFullPath)
+        private void FetchPaths(string path, VideoInfo video, out string videoName, out string videoFullPath)
         {
             videoName = video.Title;
             foreach (char c in Path.GetInvalidFileNameChars())
@@ -116,7 +116,7 @@ namespace SharedKanclPlaylist
             videoFullPath = Path.Combine(path, videoName + video.VideoExtension);
         }
 
-        private VideoInfo getVideo(string link)
+        private VideoInfo GetVideo(string link)
         {
             IEnumerable<VideoInfo> videoInfos = DownloadUrlResolver.GetDownloadUrls(link);
 
@@ -131,7 +131,7 @@ namespace SharedKanclPlaylist
             return video;
         }
 
-        private void videoDownloader_DownloadFinished(object sender, EventArgs e, string videoFullPath, string path, string videoName)
+        private void VideoDownloader_DownloadFinished(object sender, EventArgs e, string videoFullPath, string path, string videoName)
         {
             var inputFile = new MediaFile { Filename = videoFullPath };
             string musicFullPath = $"{path + videoName}.mp3";
@@ -141,7 +141,7 @@ namespace SharedKanclPlaylist
             {
                 engine.GetMetadata(inputFile);
 
-                engine.ConvertProgressEvent += engine_ConvertProgressEvent;
+                engine.ConvertProgressEvent += Engine_ConvertProgressEvent;
                 engine.Convert(inputFile, outputFile);
             }
             File.Delete(videoFullPath);
@@ -151,7 +151,7 @@ namespace SharedKanclPlaylist
                 lblSateLine.Text = "Povedlo se!";
                 lblSateLine.ForeColor = Color.Green;
             }));
-            addSongToPlayList(musicFullPath, videoName);
+            AddSongToPlayList(musicFullPath, videoName);
 
             checkNewUrlTimer.Start();
 
@@ -162,7 +162,7 @@ namespace SharedKanclPlaylist
             }
         }
 
-        private void engine_ConvertProgressEvent(object sender, ConvertProgressEventArgs e)
+        private void Engine_ConvertProgressEvent(object sender, ConvertProgressEventArgs e)
         {
             Invoke(new MethodInvoker(delegate ()
             {
@@ -173,7 +173,7 @@ namespace SharedKanclPlaylist
             }));
         }
 
-        private void videoDownloader_DownloadProgressChanged(object sender, ProgressEventArgs e)
+        private void VideoDownloader_DownloadProgressChanged(object sender, ProgressEventArgs e)
         {
             Invoke(new MethodInvoker(delegate ()
             {
@@ -183,7 +183,7 @@ namespace SharedKanclPlaylist
             }));
         }
 
-        private void addSongToPlayList(string path, string name)
+        private void AddSongToPlayList(string path, string name)
         {
             paths.Add(path);
             Invoke(new MethodInvoker(delegate ()
@@ -193,7 +193,7 @@ namespace SharedKanclPlaylist
         }
 
         // START PLAYING CHOOSEN SONG
-        private void lstBoxPlaylist_DoubleClick(object sender, MouseEventArgs e)
+        private void LstBoxPlaylist_DoubleClick(object sender, MouseEventArgs e)
         {
             int index = lstBoxPlaylist.IndexFromPoint(e.Location);
             if (index != ListBox.NoMatches)
@@ -204,7 +204,7 @@ namespace SharedKanclPlaylist
             }
         }
 
-        private void lstBoxPlaylist_KeyDown(object sender, KeyEventArgs e)
+        private void LstBoxPlaylist_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -213,7 +213,7 @@ namespace SharedKanclPlaylist
 
         }
 
-        private void btnLoadDefaultPlaylist_Click(object sender, EventArgs e)
+        private void BtnLoadDefaultPlaylist_Click(object sender, EventArgs e)
         {
             paths = new List<string>();
             lstBoxPlaylist.Items.Clear();
@@ -242,13 +242,13 @@ namespace SharedKanclPlaylist
             }
         }
 
-        void pauseBetweenSongs_Tick(object sender, EventArgs e)
+        void PauseBetweenSongs_Tick(object sender, EventArgs e)
         {
             pauseBetweenSongs.Stop();
             WindowsMediaPlayer.Ctlcontrols.play();
         }
 
-        private void tryGetNewUrl()
+        private void TryGetNewUrl()
         {
             string newUrl = client.GetYoutubeUrl();
             if (!string.IsNullOrEmpty(newUrl))
