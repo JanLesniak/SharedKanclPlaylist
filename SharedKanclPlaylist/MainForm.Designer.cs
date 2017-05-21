@@ -45,6 +45,7 @@ namespace SharedKanclPlaylist
             this.lstBoxPlaylist = new System.Windows.Forms.ListBox();
             this.lblSateLine = new System.Windows.Forms.Label();
             this.btnLoadDefaultPlaylist = new System.Windows.Forms.Button();
+            this.btnRandomPlay = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.WindowsMediaPlayer)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,11 +172,23 @@ namespace SharedKanclPlaylist
             this.btnLoadDefaultPlaylist.UseVisualStyleBackColor = true;
             this.btnLoadDefaultPlaylist.Click += new System.EventHandler(this.BtnLoadDefaultPlaylist_Click);
             // 
+            // btnRandomPlay
+            // 
+            this.btnRandomPlay.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnRandomPlay.AutoSize = true;
+            this.btnRandomPlay.Location = new System.Drawing.Point(364, 471);
+            this.btnRandomPlay.Name = "btnRandomPlay";
+            this.btnRandomPlay.Size = new System.Drawing.Size(117, 23);
+            this.btnRandomPlay.TabIndex = 16;
+            this.btnRandomPlay.Text = "Náhodné přehrávání";
+            this.btnRandomPlay.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(826, 521);
+            this.Controls.Add(this.btnRandomPlay);
             this.Controls.Add(this.btnLoadDefaultPlaylist);
             this.Controls.Add(this.lblSateLine);
             this.Controls.Add(this.lstBoxPlaylist);
@@ -215,6 +228,7 @@ namespace SharedKanclPlaylist
         private System.Windows.Forms.ListBox lstBoxPlaylist;
         private Label lblSateLine;
         private Button btnLoadDefaultPlaylist;
+        private CheckBox btnRandomPlay;
     }
 }
 

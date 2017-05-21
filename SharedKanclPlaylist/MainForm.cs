@@ -29,11 +29,15 @@ namespace SharedKanclPlaylist
         SharedKanclPlaylistWCFClient.SharedKanclPlaylistWCFSvcClient client;
         internal static ServiceHost myServiceHost = null;
 
+        bool randomChecked;
+
         public MainForm()
         {
             InitializeComponent();
             paths = new List<string>();
             defaultPath = Environment.CurrentDirectory + @"\songs\";
+
+            randomChecked = false;
 
             // Pause between songs
             pauseBetweenSongs = new System.Windows.Forms.Timer()
@@ -235,7 +239,19 @@ namespace SharedKanclPlaylist
             // Media ended (next song)
             if ((WMPLib.WMPPlayState)e.newState == WMPLib.WMPPlayState.wmppsMediaEnded)
             {
-                nowPlayingIndex++;
+                if (btnRandomPlay.Checked)
+                {
+                    Random r = new Random();
+                    int rInt = r.Next(0, lstBoxPlaylist.Items.Count); //for ints
+
+                    nowPlayingIndex = rInt;
+                    WindowsMediaPlayer.URL = paths[rInt];
+                }
+                else
+                {
+                    nowPlayingIndex++;
+                }
+
                 if (nowPlayingIndex < paths.Count)
                 {
                     lstBoxPlaylist.SetSelected(nowPlayingIndex, true);
