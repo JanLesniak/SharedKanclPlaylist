@@ -36,13 +36,17 @@ namespace SharedKanclPlaylist
             defaultPath = Environment.CurrentDirectory + @"\songs\";
 
             // Pause between songs
-            pauseBetweenSongs = new System.Windows.Forms.Timer();
-            pauseBetweenSongs.Interval = 2000;
+            pauseBetweenSongs = new System.Windows.Forms.Timer()
+            {
+                Interval = 2000
+            };
             pauseBetweenSongs.Stop();
             pauseBetweenSongs.Tick += new EventHandler(PauseBetweenSongs_Tick);
 
-            checkNewUrlTimer = new System.Windows.Forms.Timer();
-            checkNewUrlTimer.Interval = 10000;
+            checkNewUrlTimer = new System.Windows.Forms.Timer()
+            {
+                Interval = 10000
+            };
             checkNewUrlTimer.Tick += new EventHandler(CheckNewUrlTimer_Tick);
             checkNewUrlTimer.Start();
 
@@ -77,7 +81,7 @@ namespace SharedKanclPlaylist
             {
                 AddSong(txtBoxLink.Text);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 lblSateLine.Text = "Špatný link.";
                 lblSateLine.ForeColor = Color.Red;
@@ -91,8 +95,7 @@ namespace SharedKanclPlaylist
             var path = Environment.CurrentDirectory + @"\songs\";
 
             var video = GetVideo(link);
-            string videoName, videoFullPath;
-            FetchPaths(path, video, out videoName, out videoFullPath);
+            FetchPaths(path, video, out string videoName, out string videoFullPath);
 
             var videoDownloader = new VideoDownloader(video, videoFullPath);
 
@@ -265,7 +268,7 @@ namespace SharedKanclPlaylist
                 {
                     AddSong(newUrl);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     lblSateLine.Text = "Špatný link.";
                     lblSateLine.ForeColor = Color.Red;
