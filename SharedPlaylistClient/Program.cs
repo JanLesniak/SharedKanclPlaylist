@@ -10,6 +10,7 @@ namespace SheredPlaylistClient
     {
         /// <summary>
         /// The main entry point for the application.
+        /// Test git
         /// </summary>
         [STAThread]
         static void Main()
