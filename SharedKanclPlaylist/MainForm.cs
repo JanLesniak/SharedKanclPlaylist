@@ -29,15 +29,12 @@ namespace SharedKanclPlaylist
         SharedKanclPlaylistWCFClient.SharedKanclPlaylistWCFSvcClient client;
         internal static ServiceHost myServiceHost = null;
 
-        bool randomChecked;
-
         public MainForm()
         {
             InitializeComponent();
             paths = new List<string>();
+            Directory.CreateDirectory(Environment.CurrentDirectory + @"\songs\");
             defaultPath = Environment.CurrentDirectory + @"\songs\";
-
-            randomChecked = false;
 
             // Pause between songs
             pauseBetweenSongs = new System.Windows.Forms.Timer()
